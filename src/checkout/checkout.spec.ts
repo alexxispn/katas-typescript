@@ -19,8 +19,19 @@ describe('checkout', () => {
     it('should return the sum of the products when we passed more than one product', () => {
         expect(checkout('AA')).toBe(100)
         expect(checkout('AB')).toBe(80)
+        expect(checkout('ABCDA')).toBe(165)
     });
     it('should return an error when we passed an invalid product', () => {
         expect(() => checkout('E')).toThrow('Invalid product')
+    })
+    it('should return 130 when we passed three A', () => {
+        expect(checkout('AAA')).toBe(130)
+    })
+    it('should return 45 when we passed two B', () => {
+        expect(checkout('BB')).toBe(45)
+    })
+    it('should return the correct price when we passed more than one product with special offer', () => {
+        expect(checkout('AABCDADDCD')).toBe(260)
+        expect(checkout('AAABBBCCCDDD')).toBe(310)
     })
 })
