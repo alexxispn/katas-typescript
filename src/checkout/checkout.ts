@@ -21,11 +21,11 @@ const products: Product[] = [
     {item: Item.B, price: 30, specialOffer: {quantity: 2, offerPrice: 45}},
     {item: Item.C, price: 20},
     {item: Item.D, price: 15},
-];
+]
 
 const validateItem = (item: string): void => {
     if (!Object.values(Item).includes(item as Item)) {
-        throw new Error('Invalid product');
+        throw new Error('Invalid product')
     }
 }
 
@@ -45,9 +45,10 @@ export const checkout = (basket: string): number => {
     const basketItems = basket.split('')
     const countItems = new Map<Item, number>()
     basketItems.forEach(item => {
-        validateItem(item);
-        const itemKey = item as Item;
-        countItems.set(itemKey, (countItems.get(itemKey) || 0) + 1)
+        validateItem(item)
+        const itemKey = item as Item
+        const itemCounter = countItems.get(itemKey) || 0
+        countItems.set(itemKey, itemCounter + 1)
     })
     let totalPrice = 0
 
