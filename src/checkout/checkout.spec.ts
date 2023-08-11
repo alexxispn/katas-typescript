@@ -20,4 +20,7 @@ describe('checkout', () => {
         expect(checkout('AA')).toBe(100)
         expect(checkout('AB')).toBe(80)
     });
+    it('should return an error when we passed an invalid product', () => {
+        expect(() => checkout('E')).toThrow('Invalid product')
+    })
 })
