@@ -13,4 +13,10 @@ describe('fizzBuzz', () => {
         const expectedResult = ['1', '2'];
         expect(fizzBuzz(given)).toEqual(expectedResult)
     });
+    it('should return a Fizz instead of those numbers which are divisible by 3', () => {
+        const given = 3;
+
+        const expectedResult = ['1', '2', FizzBuzz.FIZZ];
+        expect(fizzBuzz(given)).toEqual(expectedResult)
+    });
 })
