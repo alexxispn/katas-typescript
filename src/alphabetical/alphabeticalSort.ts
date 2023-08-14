@@ -13,3 +13,7 @@ export const alphabeticalSort = (list: string[]): string[] => {
 
     return list
 }
+
+export const alphabeticalSort2 = (list: string[]): string[] => {
+    return list.sort()
+}
