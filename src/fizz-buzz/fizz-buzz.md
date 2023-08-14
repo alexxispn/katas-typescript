@@ -1,5 +1,38 @@
-# Fizz Buzz
+# FizzBuzz
 
-Create a program that introducing a number it return a list that starts on 1 and ends with that number. Every time a number in that list is divisible by 3 replace the number with "fizz". Every time a number is divisible by 5 replace the number with "buzz".
+The goal implement a method that accepts a number as input and prints a sequence of numbers from 1 to the given number, 
+with certain replacements for specific multiples.
 
-When a number is divisible between 3 and 5 at the same time replace with "fizzbuzz".
+## Instructions
+
+Write a program that follows these rules:
+
+- Print the numbers from 1 to the given number.
+- For multiples of 3, print "Fizz" instead of the number.
+- For multiples of 5, print "Buzz" instead of the number.
+- For numbers that are multiples of both 3 and 5, print "FizzBuzz" instead of the number.
+
+## Examples
+
+Here's how the **FizzBuzz** program should work when given the number 16 as input:
+
+```
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+16
+...
+```
+
