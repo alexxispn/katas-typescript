@@ -9,6 +9,10 @@ export const fizzBuzz = (n: number): string[] => {
     if (n === 1) return ['1']
 
     const numbers = Array.from({length: n}, (_, i) => i + 1)
+    const isFizz = (number: number) => number % 3 === 0
 
-    return numbers.map((number) => number.toString())
+    return numbers.map(number => {
+        if (isFizz(number)) return FizzBuzz.FIZZ
+        return number.toString()
+    })
 }
