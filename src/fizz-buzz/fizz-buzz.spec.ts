@@ -25,4 +25,14 @@ describe('fizzBuzz', () => {
         const expectedResult = ['1', '2', FizzBuzz.FIZZ, '4', FizzBuzz.BUZZ];
         expect(fizzBuzz(given)).toEqual(expectedResult)
     });
+    it('should return a FizzBuzz instead of those numbers which are divisible by 3 and 5', () => {
+        const given = 15;
+
+        const expectedResult = [
+            '1', '2', FizzBuzz.FIZZ, '4', FizzBuzz.BUZZ,
+            FizzBuzz.FIZZ, '7', '8', FizzBuzz.FIZZ, FizzBuzz.BUZZ,
+            '11', FizzBuzz.FIZZ, '13', '14', FizzBuzz.FIZZ_BUZZ
+        ];
+        expect(fizzBuzz(given)).toEqual(expectedResult)
+    });
 })
