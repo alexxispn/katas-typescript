@@ -19,4 +19,10 @@ describe('fizzBuzz', () => {
         const expectedResult = ['1', '2', FizzBuzz.FIZZ];
         expect(fizzBuzz(given)).toEqual(expectedResult)
     });
+    it('should return a Buzz instead of those numbers which are divisible by 5', () => {
+        const given = 5;
+
+        const expectedResult = ['1', '2', FizzBuzz.FIZZ, '4', FizzBuzz.BUZZ];
+        expect(fizzBuzz(given)).toEqual(expectedResult)
+    });
 })
