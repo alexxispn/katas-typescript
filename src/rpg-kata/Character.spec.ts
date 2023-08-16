@@ -1,0 +1,9 @@
+import { Character } from './Character';
+
+describe('Character', () => {
+    it('should have 1000 health when created', () => {
+        const character = new Character()
+
+        expect(character.getHealth()).toBe(1000)
+    })
+})
