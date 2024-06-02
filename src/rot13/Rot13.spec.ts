@@ -35,8 +35,10 @@ describe("Rot13", () => {
     })
 
     describe("converts words", () => {
-        it("'hola' to 'ubyn'", () => {
-            expect(new Rot13().convert('hola')).toBe('ubyn')
+        it.each([
+            ['hola', 'ubyn'],
+        ])('word %s in %s', (word, rot13Word) => {
+            expect(new Rot13().convert(word)).toBe(rot13Word)
         })
     })
 })
