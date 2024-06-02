@@ -20,4 +20,17 @@ describe("Rot13", () => {
             expect(new Rot13().convert(char)).toBe(rot13Char)
         })
     })
+
+    describe("convert chars at the end of the alphabet", () => {
+        it.each([
+            ['A', 'N'],
+            ['B', 'O'],
+            ['C', 'P'],
+            ['N', 'A'],
+            ['O', 'B'],
+            ['P', 'C'],
+        ])('char %s in %s', (char, rot13Char) => {
+            expect(new Rot13().convert(char)).toBe(rot13Char)
+        })
+    })
 })
