@@ -39,8 +39,23 @@ describe("Rot13", () => {
             ['hola', 'ubyn'],
             ['adios', 'nqvbf'],
             ['hello', 'uryyb'],
+            ['HOLA', 'UBYN'],
+            ['Hola', 'Ubyn'],
+            ['hOLA', 'uBYN'],
         ])('word %s in %s', (word, rot13Word) => {
             expect(new Rot13().convert(word)).toBe(rot13Word)
+        })
+    })
+
+    describe("converts sentences", () => {
+        it.each([
+            ['hola adios', 'ubyn nqvbf'],
+            ['hello world', 'uryyb jbeyq'],
+            ['HOLA ADIOS', 'UBYN NQVBF'],
+            ['Hola Adios', 'Ubyn Nqvbf'],
+            ['hOLA aDIOS', 'uBYN nQVBF'],
+        ])('sentence %s in %s', (sentence, rot13Sentence) => {
+            expect(new Rot13().convert(sentence)).toBe(rot13Sentence)
         })
     })
 })
