@@ -6,12 +6,16 @@ export class Rot13 {
     }
 
     private convertChar(char: string) {
-        if (!char.match(/[a-zA-Z]/)) {
+        if (this.isSpecialChar(char)) {
             return char
         }
         const charToLowerCase = char.toLowerCase()
         const rot13Char = (this.alphabet)[(this.alphabet.indexOf(charToLowerCase) + 13) % 26]
 
         return char === charToLowerCase ? rot13Char : rot13Char.toUpperCase()
+    }
+
+    private isSpecialChar(char: string) {
+        return !this.alphabet.includes(char.toLowerCase())
     }
 }
