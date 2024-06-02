@@ -5,7 +5,7 @@ describe("Rot13", () => {
         it.each([
             ['a', 'n'],
             ['b', 'o'],
-            ['c', 'p'],
+            ['m', 'z'],
         ])('char %s in %s', (char, rot13Char) => {
             expect(new Rot13().convert(char)).toBe(rot13Char)
         })
@@ -15,7 +15,7 @@ describe("Rot13", () => {
         it.each([
             ['n', 'a'],
             ['o', 'b'],
-            ['p', 'c'],
+            ['z', 'm'],
         ])('char %s in %s', (char, rot13Char) => {
             expect(new Rot13().convert(char)).toBe(rot13Char)
         })
@@ -25,10 +25,10 @@ describe("Rot13", () => {
         it.each([
             ['A', 'N'],
             ['B', 'O'],
-            ['C', 'P'],
+            ['M', 'Z'],
             ['N', 'A'],
             ['O', 'B'],
-            ['P', 'C'],
+            ['Z', 'M'],
         ])('char %s in %s', (char, rot13Char) => {
             expect(new Rot13().convert(char)).toBe(rot13Char)
         })
