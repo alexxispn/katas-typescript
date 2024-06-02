@@ -4,7 +4,9 @@ export class Rot13 {
     }
 
     private convertChar(char: string) {
-        if (char === ' ') return char
+        if (!char.match(/[a-zA-Z]/)) {
+            return char
+        }
         const alphabet = 'abcdefghijklmnopqrstuvwxyz'
         const charToLowerCase = char.toLowerCase()
         const rot13Char = alphabet[(alphabet.indexOf(charToLowerCase) + 13) % 26]
