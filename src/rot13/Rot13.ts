@@ -20,10 +20,10 @@ export class Rot13 {
     }
 
     private isSpecialChar(char: string) {
-        return !this.alphabetLowerCased.includes(char.toLowerCase())
+        return !(this.alphabetLowerCased + this.alphabetUpperCased).includes(char)
     }
 
     private isLowerCase(letter: string): boolean {
-        return letter === letter.toLowerCase()
+        return this.alphabetLowerCased.includes(letter)
     }
 }
