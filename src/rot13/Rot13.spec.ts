@@ -14,6 +14,7 @@ describe("Rot13", () => {
     describe("convert chars in the second half of the alphabet", () => {
         it.each([
             ['n', 'a'],
+            ['o', 'b'],
         ])('char %s in %s', (char, rot13Char) => {
             expect(new Rot13().convert(char)).toBe(rot13Char)
         })
