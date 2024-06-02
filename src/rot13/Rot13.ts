@@ -9,7 +9,7 @@ export class Rot13 {
         return convertedChars.join('')
     }
 
-    private convertChar(char: string) {
+    private convertChar(char: string): string {
         if (this.isSpecialChar(char)) {
             return char
         }
@@ -19,11 +19,11 @@ export class Rot13 {
             : this.rotate13Letter(this.alphabetUpperCased, char)
     }
 
-    private rotate13Letter(alphabet: string, char: string) {
+    private rotate13Letter(alphabet: string, char: string): string {
         return alphabet[(alphabet.indexOf(char) + 13) % 26]
     }
 
-    private isSpecialChar(char: string) {
+    private isSpecialChar(char: string): boolean {
         return !(this.alphabetLowerCased + this.alphabetUpperCased).includes(char)
     }
 
