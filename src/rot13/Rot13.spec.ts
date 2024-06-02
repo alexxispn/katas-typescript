@@ -21,7 +21,7 @@ describe("Rot13", () => {
         })
     })
 
-    describe("converts chars at the end of the alphabet", () => {
+    describe("converts chars in upper case", () => {
         it.each([
             ['A', 'N'],
             ['B', 'O'],
