@@ -14,13 +14,10 @@ export class Rot13 {
             return char
         }
 
-        let alphabet
         if (this.isLowerCase(char)) {
-            alphabet = this.alphabetLowerCased
-            return this.rotate13Letter(alphabet, char)
+            return this.rotate13Letter(this.alphabetLowerCased, char)
         } else {
-            alphabet = this.alphabetUpperCased
-            return this.rotate13Letter(alphabet, char)
+            return this.rotate13Letter(this.alphabetUpperCased, char)
         }
     }
 
