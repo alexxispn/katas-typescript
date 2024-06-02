@@ -14,15 +14,13 @@ export class Rot13 {
             return char
         }
 
-        if (this.isLowerCase(char)) {
-            return this.rotate13Letter(this.alphabetLowerCased, char)
-        } else {
-            return this.rotate13Letter(this.alphabetUpperCased, char)
-        }
+        return this.isLowerCase(char)
+            ? this.rotate13Letter(this.alphabetLowerCased, char)
+            : this.rotate13Letter(this.alphabetUpperCased, char)
     }
 
     private rotate13Letter(alphabet: string, char: string) {
-        return alphabet[(alphabet.indexOf(char) + 13) % 26];
+        return alphabet[(alphabet.indexOf(char) + 13) % 26]
     }
 
     private isSpecialChar(char: string) {
