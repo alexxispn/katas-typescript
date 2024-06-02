@@ -58,4 +58,16 @@ describe("Rot13", () => {
             expect(new Rot13().convert(sentence)).toBe(rot13Sentence)
         })
     })
+
+    describe("converts sentences with special characters", () => {
+        it.each([
+            ['hola, adios', 'ubyn, nqvbf'],
+            ['hello, world!', 'uryyb, jbeyq!'],
+            ['HOLA, ADIOS', 'UBYN, NQVBF'],
+            ['Hola, Adios', 'Ubyn, Nqvbf'],
+            ['hOLA, aDIOS', 'uBYN, nQVBF'],
+        ])('sentence %s in %s', (sentence, rot13Sentence) => {
+            expect(new Rot13().convert(sentence)).toBe(rot13Sentence)
+        })
+    })
 })
