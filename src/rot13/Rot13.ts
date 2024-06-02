@@ -9,10 +9,9 @@ export class Rot13 {
         if (this.isSpecialChar(char)) {
             return char
         }
-        const charToLowerCase = char.toLowerCase()
-        const rot13Char = (this.alphabet)[(this.alphabet.indexOf(charToLowerCase) + 13) % 26]
+        const rot13Char = this.alphabet[(this.alphabet.indexOf(char.toLowerCase()) + 13) % 26]
 
-        return char === charToLowerCase ? rot13Char : rot13Char.toUpperCase()
+        return char === char.toLowerCase() ? rot13Char : rot13Char.toUpperCase()
     }
 
     private isSpecialChar(char: string) {
