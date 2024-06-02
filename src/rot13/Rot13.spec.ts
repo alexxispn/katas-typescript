@@ -1,4 +1,4 @@
-import {Rot13} from "./Rot13";
+import {Rot13} from "./Rot13"
 
 describe("Rot13", () => {
     describe("converts chars in the first half of the alphabet", () => {

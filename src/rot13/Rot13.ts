@@ -1,9 +1,9 @@
 export class Rot13 {
-    private alphabetLowerCased = 'abcdefghijklmnopqrstuvwxyz';
+    private alphabetLowerCased = 'abcdefghijklmnopqrstuvwxyz'
 
     convert(text: string): string {
-        const extractedChars = text.split('');
-        const convertedChars = extractedChars.map((char) => this.convertChar(char));
+        const extractedChars = text.split('')
+        const convertedChars = extractedChars.map((char) => this.convertChar(char))
 
         return convertedChars.join('')
     }
