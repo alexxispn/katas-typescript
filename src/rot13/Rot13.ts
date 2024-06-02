@@ -7,6 +7,9 @@ export class Rot13 {
         if(char === 'o') {
             return 'b'
         }
+        if(char === 'p') {
+            return 'c'
+        }
         return alphabet[alphabet.indexOf(char) + 13]
     }
 }
