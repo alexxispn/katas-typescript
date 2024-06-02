@@ -1,4 +1,6 @@
 export class Rot13 {
+    private alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
     convert(word: string): string {
         return word.split('').map((char) => this.convertChar(char)).join('')
     }
@@ -7,9 +9,8 @@ export class Rot13 {
         if (!char.match(/[a-zA-Z]/)) {
             return char
         }
-        const alphabet = 'abcdefghijklmnopqrstuvwxyz'
         const charToLowerCase = char.toLowerCase()
-        const rot13Char = alphabet[(alphabet.indexOf(charToLowerCase) + 13) % 26]
+        const rot13Char = (this.alphabet)[(this.alphabet.indexOf(charToLowerCase) + 13) % 26]
 
         return char === charToLowerCase ? rot13Char : rot13Char.toUpperCase()
     }
