@@ -8,4 +8,9 @@ describe("Rot13", () => {
     it("converts char 'b' in 'o'", () => {
         expect(new Rot13().convert("b")).toBe("o")
     })
+
+    it("converts char 'c' in 'p'", () => {
+        expect(new Rot13().convert("c")).toBe("p")
+    })
+
 })
