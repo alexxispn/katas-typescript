@@ -1,8 +1,11 @@
 export class Rot13 {
     private alphabetLowerCased = 'abcdefghijklmnopqrstuvwxyz';
 
-    convert(word: string): string {
-        return word.split('').map((char) => this.convertChar(char)).join('')
+    convert(text: string): string {
+        const extractedChars = text.split('');
+        const convertedChars = extractedChars.map((char) => this.convertChar(char));
+
+        return convertedChars.join('')
     }
 
     private convertChar(char: string) {
