@@ -37,6 +37,7 @@ describe("Rot13", () => {
     describe("converts words", () => {
         it.each([
             ['hola', 'ubyn'],
+            ['adios', 'nqvbf'],
         ])('word %s in %s', (word, rot13Word) => {
             expect(new Rot13().convert(word)).toBe(rot13Word)
         })
