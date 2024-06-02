@@ -4,6 +4,9 @@ export class Rot13 {
         if(char === 'b'){
             return 'o'
         }
+        if(char === 'c'){
+            return 'p'
+        }
         return 'n'
     }
 }
