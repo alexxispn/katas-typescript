@@ -1,7 +1,7 @@
 import {Rot13} from "./Rot13";
 
 describe("Rot13", () => {
-    describe("convert chars in the first half of the alphabet", () => {
+    describe("converts chars in the first half of the alphabet", () => {
         it.each([
             ['a', 'n'],
             ['b', 'o'],
@@ -11,7 +11,7 @@ describe("Rot13", () => {
         })
     })
 
-    describe("convert chars in the second half of the alphabet", () => {
+    describe("converts chars in the second half of the alphabet", () => {
         it.each([
             ['n', 'a'],
             ['o', 'b'],
@@ -21,7 +21,7 @@ describe("Rot13", () => {
         })
     })
 
-    describe("convert chars at the end of the alphabet", () => {
+    describe("converts chars at the end of the alphabet", () => {
         it.each([
             ['A', 'N'],
             ['B', 'O'],
@@ -31,6 +31,12 @@ describe("Rot13", () => {
             ['P', 'C'],
         ])('char %s in %s', (char, rot13Char) => {
             expect(new Rot13().convert(char)).toBe(rot13Char)
+        })
+    })
+
+    describe("converts words", () => {
+        it("'hola' to 'ubyn'", () => {
+            expect(new Rot13().convert('hola')).toBe('ubyn')
         })
     })
 })
