@@ -15,6 +15,7 @@ describe("Rot13", () => {
         it.each([
             ['n', 'a'],
             ['o', 'b'],
+            ['p', 'c'],
         ])('char %s in %s', (char, rot13Char) => {
             expect(new Rot13().convert(char)).toBe(rot13Char)
         })
