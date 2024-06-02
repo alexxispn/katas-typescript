@@ -21,12 +21,12 @@ export class Rot13 {
         return !(this.alphabetLowerCased + this.alphabetUpperCased).includes(char)
     }
 
-    private rotate13Letter(char: string, alphabet: string): string {
-        return alphabet[(alphabet.indexOf(char) + 13) % 26]
+    private rotate13Letter(letter: string, alphabet: string): string {
+        return alphabet[(alphabet.indexOf(letter) + 13) % 26]
     }
 
-    private choseAlphabet(char: string) {
-        return this.isLowerCase(char)
+    private choseAlphabet(letter: string) {
+        return this.isLowerCase(letter)
             ? this.alphabetLowerCased
             : this.alphabetUpperCased
     }
