@@ -1,5 +1,6 @@
 export class Rot13 {
     private alphabetLowerCased = 'abcdefghijklmnopqrstuvwxyz'
+    private alphabetUpperCased = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
     convert(text: string): string {
         const extractedChars = text.split('')
@@ -15,7 +16,7 @@ export class Rot13 {
 
         return this.isLowerCase(char)
             ? this.alphabetLowerCased[(this.alphabetLowerCased.indexOf(char.toLowerCase()) + 13) % 26]
-            : this.alphabetLowerCased[(this.alphabetLowerCased.indexOf(char.toLowerCase()) + 13) % 26].toUpperCase()
+            : this.alphabetUpperCased[(this.alphabetUpperCased.indexOf(char.toUpperCase()) + 13) % 26]
     }
 
     private isSpecialChar(char: string) {
