@@ -13,9 +13,9 @@ export class Rot13 {
             return char
         }
 
-        const rot13Char = this.alphabetLowerCased[(this.alphabetLowerCased.indexOf(char.toLowerCase()) + 13) % 26]
-
-        return this.isLowerCase(char) ? rot13Char : rot13Char.toUpperCase()
+        return this.isLowerCase(char)
+            ? this.alphabetLowerCased[(this.alphabetLowerCased.indexOf(char.toLowerCase()) + 13) % 26]
+            : this.alphabetLowerCased[(this.alphabetLowerCased.indexOf(char.toLowerCase()) + 13) % 26].toUpperCase()
     }
 
     private isSpecialChar(char: string) {
